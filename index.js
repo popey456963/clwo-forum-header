@@ -25,7 +25,7 @@ async function update_data() {
   }
 }
 
-setTimeout(update_data, 5000)
+setInterval(update_data, 5000)
 
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*")
