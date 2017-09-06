@@ -8,6 +8,7 @@ let data = {
 
 async function update_data() {
   let network_query = JSON.parse(await request('https://clwo.eu/jailbreak/api/v2/networkquery.php'))
+  data = { servers: {} }
   for (let server of network_query.data) {
     let server_info = {
       player_count: server.ClientCount,
