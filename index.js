@@ -1,5 +1,6 @@
 const express = require('express')
 const request = require('request-promise')
+const compression = require('compression')
 const app = express()
 
 let data = {
@@ -27,6 +28,8 @@ async function update_data() {
 }
 
 setInterval(update_data, 5000)
+
+app.use(compression())
 
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*")
